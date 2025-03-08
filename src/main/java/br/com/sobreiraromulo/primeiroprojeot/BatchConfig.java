@@ -36,12 +36,26 @@ public class BatchConfig {
                 .build();
     }
 
+    /*
+     * Um step define sua lógica com base no seu tipo
+     * tasklet ou chunk
+     */
+
     @Bean
     public Step imprimeOlaStep() {
         return new StepBuilder("imprimeOlaStep", jobRepository)
                 .tasklet(imprimeOlaTasklet(null), transactionManager)
                 .build();
     }
+
+    /*
+     * Tasklets são usadas para pequenas tarefas,
+     * geralmente para tarefas de pré-processamento
+     * e que precisam de um único comando para executar,
+     * como: Limpeza de aquivos, criação de diretórios, etc.
+     * 
+     * A tasklet executa repetidamente até o status de concluido
+     */
 
     @Bean
     @StepScope
@@ -57,5 +71,16 @@ public class BatchConfig {
             }
         };
     }
+
+    /*
+     * Os chunks por sua vez, são utilizados para processamentos
+     * mais complexos e precisam ser realizados em pedeçaos,
+     * esses pedaços são divididos em tarefas:
+     * leitura (ItemReader), Processamento (ItemProcess) e
+     * Escrita(ItemWriter) e cada chunk possui a sua propria
+     * trnasação, isso siginifica que se ocorrer um erro durante
+     * o processamento, todo o trabalho que foi executado nos anteriores
+     * estará salvo. O que define o tamanho do chunk é o commitInterval
+     */
 
 }
