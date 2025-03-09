@@ -1,4 +1,4 @@
-package br.com.sobreiraromulo.primeiroprojeot;
+package br.com.sobreiraromulo.primeiroprojeot.job;
 
 import java.util.Arrays;
 import java.util.List;
