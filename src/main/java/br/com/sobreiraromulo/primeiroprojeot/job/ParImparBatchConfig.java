@@ -25,7 +25,8 @@ public class ParImparBatchConfig {
     private JobRepository jobRepository;
     private PlatformTransactionManager transactionManager;
 
-    public ParImparBatchConfig(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+    public ParImparBatchConfig(JobRepository jobRepository,
+            PlatformTransactionManager transactionManager) {
         this.jobRepository = jobRepository;
         this.transactionManager = transactionManager;
     }
@@ -52,14 +53,15 @@ public class ParImparBatchConfig {
     @StepScope
     @Bean
     public IteratorItemReader<Integer> contaAteDezReader() {
-        List<Integer> numerosDeUmAteDez = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> numerosDeUmAteDez = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9,
+                10);
 
         return new IteratorItemReader<Integer>(numerosDeUmAteDez.iterator());
     }
 
     public FunctionItemProcessor<Integer, String> parOuImparProcessor() {
         return new FunctionItemProcessor<Integer, String>(item -> item % 2 == 0 ? String.format("Item %s é Par", item)
-                : String.format("Item  %s é impar", item));
+                : String.format("Item %s é impar", item));
     }
 
     public ItemWriter<String> imprimeWriter() {

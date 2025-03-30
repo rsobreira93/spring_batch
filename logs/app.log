@@ -1,0 +1,13 @@
+2025-03-30 07:29:41,006 INFO b.c.s.p.PrimeiroprojeotApplication [main] Starting PrimeiroprojeotApplication using Java 17.0.14 with PID 9408 (/home/romulo/projetos/primeiroprojeot/target/classes started by romulo in /home/romulo/projetos/primeiroprojeot)
+2025-03-30 07:29:41,008 INFO b.c.s.p.PrimeiroprojeotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-30 07:29:41,471 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2025-03-30 07:29:41,634 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-03-30 07:29:41,889 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f2bd6d9
+2025-03-30 07:29:41,891 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-03-30 07:29:42,146 INFO b.c.s.p.PrimeiroprojeotApplication [main] Started PrimeiroprojeotApplication in 1.422 seconds (process running for 1.752)
+2025-03-30 07:29:42,316 INFO o.s.b.c.l.s.TaskExecutorJobLauncher [main] Job: [SimpleJob: [name=impreParImparJob]] launched with the following parameters: [{'name':'{value=Romulo, type=class java.lang.String, identifying=true}','run.id':'{value=10, type=class java.lang.Long, identifying=true}'}]
+2025-03-30 07:29:42,372 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParImparSetp]
+2025-03-30 07:29:42,570 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParImparSetp] executed in 197ms
+2025-03-30 07:29:42,609 INFO o.s.b.c.l.s.TaskExecutorJobLauncher [main] Job: [SimpleJob: [name=impreParImparJob]] completed with the following parameters: [{'name':'{value=Romulo, type=class java.lang.String, identifying=true}','run.id':'{value=10, type=class java.lang.Long, identifying=true}'}] and the following status: [COMPLETED] in 268ms
+2025-03-30 07:29:42,617 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-03-30 07:29:42,633 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
